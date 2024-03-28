@@ -13,6 +13,190 @@ packages:
         - sh -c 'echo v${PACKIT_PROJECT_VERSION}.tar.gz'
       get-current-version:
         - rpmspec -q --qf "%{Version}" --srpm atuin/atuin.spec
+  # Other dependencies to package:
+  rust-axum-server:
+    # https://github.com/programatik29/axum-server
+    specfile_path: rust-axum-server/rust-axum-server.spec
+    files_to_sync:
+      - rust-axum-server/rust-axum-server.spec
+      - rust-axum-server/rust2rpm.toml
+    upstream_package_name: axum-server
+    downstream_package_name: rust-axum-server
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-axum-server/rust-axum-server.spec
+        - sh -c 'echo axum-server-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-axum-server/rust-axum-server.spec
+  rust-cli-clipboard:
+    # https://github.com/actuallyallie/cli-clipboard
+    specfile_path: rust-cli-clipboard/rust-cli-clipboard.spec
+    files_to_sync:
+      - rust-cli-clipboard/rust-cli-clipboard.spec
+      - rust-cli-clipboard/rust2rpm.toml
+    upstream_package_name: cli-clipboard
+    downstream_package_name: rust-cli-clipboard
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-cli-clipboard/rust-cli-clipboard.spec
+        - sh -c 'echo cli-clipboard-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-cli-clipboard/rust-cli-clipboard.spec
+  rust-interim:
+    # https://github.com/conradludgate/interim
+    specfile_path: rust-interim/rust-interim.spec
+    files_to_sync:
+      - rust-interim/rust-interim.spec
+      - rust-interim/rust2rpm.toml
+    upstream_package_name: interim
+    downstream_package_name: rust-interim
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-interim/rust-interim.spec
+        - sh -c 'echo interim-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-interim/rust-interim.spec
+  rust-metrics-exporter-prometheus:
+    # https://github.com/metrics-rs/metrics
+    specfile_path: rust-metrics-exporter-prometheus/rust-metrics-exporter-prometheus.spec
+    files_to_sync:
+      - rust-metrics-exporter-prometheus/rust-metrics-exporter-prometheus.spec
+      - rust-metrics-exporter-prometheus/rust2rpm.toml
+    upstream_package_name: metrics-exporter-prometheus
+    downstream_package_name: rust-metrics-exporter-prometheus
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-metrics-exporter-prometheus/rust-metrics-exporter-prometheus.spec
+        - sh -c 'echo metrics-exporter-prometheus-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-metrics-exporter-prometheus/rust-metrics-exporter-prometheus.spec
+  rust-metrics:
+    # https://github.com/metrics-rs/metrics
+    specfile_path: rust-metrics/rust-metrics.spec
+    files_to_sync:
+      - rust-metrics/rust-metrics.spec
+      - rust-metrics/rust2rpm.toml
+    upstream_package_name: metrics
+    downstream_package_name: rust-metrics
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-metrics/rust-metrics.spec
+        - sh -c 'echo metrics-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-metrics/rust-metrics.spec
+  rust-minspan:
+    # ???
+    # Note: Badly packaged: No license file
+    specfile_path: rust-minspan/rust-minspan.spec
+    files_to_sync:
+      - rust-minspan/rust-minspan.spec
+      - rust-minspan/rust2rpm.toml
+    upstream_package_name: minspan
+    downstream_package_name: rust-minspan
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-minspan/rust-minspan.spec
+        - sh -c 'echo minspan-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-minspan/rust-minspan.spec
+  rust-parse_duration:
+    # https://github.com/zeta12ti/parse_duration/
+    specfile_path: rust-parse_duration/rust-parse_duration.spec
+    files_to_sync:
+      - rust-parse_duration/rust-parse_duration.spec
+      - rust-parse_duration/rust2rpm.toml
+    upstream_package_name: parse_duration
+    downstream_package_name: rust-parse_duration
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-parse_duration/rust-parse_duration.spec
+        - sh -c 'echo parse_duration-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-parse_duration/rust-parse_duration.spec
+  rust-rusty_paserk:
+    # https://github.com/conradludgate/rusty-paserk
+    specfile_path: rust-rusty_paserk/rust-rusty_paserk.spec
+    files_to_sync:
+      - rust-rusty_paserk/rust-rusty_paserk.spec
+      - rust-rusty_paserk/rust2rpm.toml
+    upstream_package_name: rusty_paserk
+    downstream_package_name: rust-rusty_paserk
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-rusty_paserk/rust-rusty_paserk.spec
+        - sh -c 'echo rusty_paserk-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-rusty_paserk/rust-rusty_paserk.spec
+  rust-rusty_paseto:
+    # https://github.com/rrrodzilla/rusty_paseto
+    specfile_path: rust-rusty_paseto/rust-rusty_paseto.spec
+    files_to_sync:
+      - rust-rusty_paseto/rust-rusty_paseto.spec
+      - rust-rusty_paseto/rust2rpm.toml
+    upstream_package_name: rusty_paseto
+    downstream_package_name: rust-rusty_paseto
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-rusty_paseto/rust-rusty_paseto.spec
+        - sh -c 'echo rusty_paseto-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-rusty_paseto/rust-rusty_paseto.spec
+  rust-sql-builder:
+    # https://github.com/perdumonocle/sql-builder.git
+    specfile_path: rust-sql-builder/rust-sql-builder.spec
+    files_to_sync:
+      - rust-sql-builder/rust-sql-builder.spec
+      - rust-sql-builder/rust2rpm.toml
+    upstream_package_name: sql-builder
+    downstream_package_name: rust-sql-builder
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-sql-builder/rust-sql-builder.spec
+        - sh -c 'echo sql-builder-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-sql-builder/rust-sql-builder.spec
+  rust-sqlx:
+    # https://github.com/launchbadge/sqlx
+    specfile_path: rust-sqlx/rust-sqlx.spec
+    files_to_sync:
+      - rust-sqlx/rust-sqlx.spec
+      - rust-sqlx/rust2rpm.toml
+    upstream_package_name: sqlx
+    downstream_package_name: rust-sqlx
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-sqlx/rust-sqlx.spec
+        - sh -c 'echo sqlx-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-sqlx/rust-sqlx.spec
+  rust-tiny-bip39:
+    # https://github.com/maciejhirsz/tiny-bip39/
+    specfile_path: rust-tiny-bip39/rust-tiny-bip39.spec
+    files_to_sync:
+      - rust-tiny-bip39/rust-tiny-bip39.spec
+      - rust-tiny-bip39/rust2rpm.toml
+    upstream_package_name: tiny-bip39
+    downstream_package_name: rust-tiny-bip39
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-tiny-bip39/rust-tiny-bip39.spec
+        - sh -c 'echo tiny-bip39-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-tiny-bip39/rust-tiny-bip39.spec
+  rust-tracing-tree:
+    # https://github.com/davidbarsky/tracing-tree
+    specfile_path: rust-tracing-tree/rust-tracing-tree.spec
+    files_to_sync:
+      - rust-tracing-tree/rust-tracing-tree.spec
+      - rust-tracing-tree/rust2rpm.toml
+    upstream_package_name: tracing-tree
+    downstream_package_name: rust-tracing-tree
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-tracing-tree/rust-tracing-tree.spec
+        - sh -c 'echo tracing-tree-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-tracing-tree/rust-tracing-tree.spec
   # Upstream is working on it:
   rust-argon2:
     # https://bugzilla.redhat.com/show_bug.cgi?id=2258880
