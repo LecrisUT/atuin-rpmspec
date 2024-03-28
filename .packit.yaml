@@ -32,6 +32,51 @@ packages:
         - sh -c 'echo crypto_secretbox-${PACKIT_PROJECT_VERSION}.crate'
       get-current-version:
         - rpmspec -q --qf "%{Version}" --srpm rust-crypto_secretbox/rust-crypto_secretbox.spec
+  # Already upstream, needs update
+  rust-axum:
+    specfile_path: rust-axum/rust-axum.spec
+    files_to_sync:
+      - rust-axum/rust-axum.spec
+      - rust-axum/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-axum/rust-axum.spec
+        - sh -c 'echo axum-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-axum/rust-axum.spec
+  rust-rustls-pemfile:
+    specfile_path: rust-rustls-pemfile/rust-rustls-pemfile.spec
+    files_to_sync:
+      - rust-rustls-pemfile/rust-rustls-pemfile.spec
+      - rust-rustls-pemfile/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-rustls-pemfile/rust-rustls-pemfile.spec
+        - sh -c 'echo rustls-pemfile-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-rustls-pemfile/rust-rustls-pemfile.spec
+  rust-tower-http:
+    specfile_path: rust-tower-http/rust-tower-http.spec
+    files_to_sync:
+      - rust-tower-http/rust-tower-http.spec
+      - rust-tower-http/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-tower-http/rust-tower-http.spec
+        - sh -c 'echo tower-http-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-tower-http/rust-tower-http.spec
+  rust-typed-builder:
+    specfile_path: rust-typed-builder/rust-typed-builder.spec
+    files_to_sync:
+      - rust-typed-builder/rust-typed-builder.spec
+      - rust-typed-builder/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-typed-builder/rust-typed-builder.spec
+        - sh -c 'echo typed-builder-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-typed-builder/rust-typed-builder.spec
 
 jobs:
   - job: copr_build
