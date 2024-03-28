@@ -1,0 +1,12 @@
+--- rustls-pki-types-1.4.1/Cargo.toml	1970-01-01T00:00:01+00:00
++++ rustls-pki-types-1.4.1/Cargo.toml	2024-03-28T14:36:34.618501+00:00
+@@ -37,8 +37,5 @@
+ alloc = []
+ default = ["alloc"]
+ std = ["alloc"]
+-web = ["web-time"]
++web = []
+ 
+-[target."cfg(all(target_family = \"wasm\", target_os = \"unknown\"))".dependencies.web-time]
+-version = "1"
+-optional = true

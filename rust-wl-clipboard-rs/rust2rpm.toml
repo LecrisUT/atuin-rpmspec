@@ -1,0 +1,3 @@
+[tests]
+run = ["doc"]
+comments = ["unit tests require a running wayland display server"]

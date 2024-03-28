@@ -1,0 +1,3 @@
+[tests]
+run = ["none"]
+comments = ["tests require a running X server"]

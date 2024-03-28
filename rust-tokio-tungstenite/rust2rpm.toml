@@ -1,0 +1,5 @@
+[package]
+summary = "Tokio binding for Tungstenite"
+
+[features]
+hide = ["native-tls-vendored"]

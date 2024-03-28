@@ -169,6 +169,62 @@ packages:
         - sh -c 'echo sqlx-${PACKIT_PROJECT_VERSION}.crate'
       get-current-version:
         - rpmspec -q --qf "%{Version}" --srpm rust-sqlx/rust-sqlx.spec
+  rust-sqlx-core:
+    # https://github.com/launchbadge/sqlx
+    specfile_path: rust-sqlx-core/rust-sqlx-core.spec
+    files_to_sync:
+      - rust-sqlx-core/rust-sqlx-core.spec
+      - rust-sqlx-core/rust2rpm.toml
+    upstream_package_name: sqlx-core
+    downstream_package_name: rust-sqlx-core
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-sqlx-core/rust-sqlx-core.spec
+        - sh -c 'echo sqlx-core-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-sqlx-core/rust-sqlx-core.spec
+  rust-sqlx-macros:
+    # https://github.com/launchbadge/sqlx
+    specfile_path: rust-sqlx-macros/rust-sqlx-macros.spec
+    files_to_sync:
+      - rust-sqlx-macros/rust-sqlx-macros.spec
+      - rust-sqlx-macros/rust2rpm.toml
+    upstream_package_name: sqlx-macros
+    downstream_package_name: rust-sqlx-macros
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-sqlx-macros/rust-sqlx-macros.spec
+        - sh -c 'echo sqlx-macros-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-sqlx-macros/rust-sqlx-macros.spec
+  rust-sqlx-mysql:
+    # https://github.com/launchbadge/sqlx
+    specfile_path: rust-sqlx-mysql/rust-sqlx-mysql.spec
+    files_to_sync:
+      - rust-sqlx-mysql/rust-sqlx-mysql.spec
+      - rust-sqlx-mysql/rust2rpm.toml
+    upstream_package_name: sqlx-mysql
+    downstream_package_name: rust-sqlx-mysql
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-sqlx-mysql/rust-sqlx-mysql.spec
+        - sh -c 'echo sqlx-mysql-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-sqlx-mysql/rust-sqlx-mysql.spec
+  rust-sqlx-sqlite:
+    # https://github.com/launchbadge/sqlx
+    specfile_path: rust-sqlx-sqlite/rust-sqlx-sqlite.spec
+    files_to_sync:
+      - rust-sqlx-sqlite/rust-sqlx-sqlite.spec
+      - rust-sqlx-sqlite/rust2rpm.toml
+    upstream_package_name: sqlx-sqlite
+    downstream_package_name: rust-sqlx-sqlite
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-sqlx-sqlite/rust-sqlx-sqlite.spec
+        - sh -c 'echo sqlx-sqlite-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-sqlx-sqlite/rust-sqlx-sqlite.spec
   rust-tiny-bip39:
     # https://github.com/maciejhirsz/tiny-bip39/
     specfile_path: rust-tiny-bip39/rust-tiny-bip39.spec
@@ -197,6 +253,131 @@ packages:
         - sh -c 'echo tracing-tree-${PACKIT_PROJECT_VERSION}.crate'
       get-current-version:
         - rpmspec -q --qf "%{Version}" --srpm rust-tracing-tree/rust-tracing-tree.spec
+  rust-criterion:
+    # https://github.com/bheisler/criterion.rs
+    specfile_path: rust-criterion/rust-criterion.spec
+    files_to_sync:
+      - rust-criterion/rust-criterion.spec
+      - rust-criterion/rust2rpm.toml
+    upstream_package_name: criterion
+    downstream_package_name: rust-criterion
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-criterion/rust-criterion.spec
+        - sh -c 'echo criterion-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-criterion/rust-criterion.spec
+  rust-http-body-util:
+    # https://github.com/hyperium/http-body
+    specfile_path: rust-http-body-util/rust-http-body-util.spec
+    files_to_sync:
+      - rust-http-body-util/rust-http-body-util.spec
+      - rust-http-body-util/rust2rpm.toml
+    upstream_package_name: http-body-util
+    downstream_package_name: rust-http-body-util
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-http-body-util/rust-http-body-util.spec
+        - sh -c 'echo http-body-util-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-http-body-util/rust-http-body-util.spec
+  rust-typed-builder-macro:
+    specfile_path: rust-typed-builder-macro/rust-typed-builder-macro.spec
+    files_to_sync:
+      - rust-typed-builder-macro/rust-typed-builder-macro.spec
+      - rust-typed-builder-macro/rust2rpm.toml
+    upstream_package_name: typed-builder-macro
+    downstream_package_name: rust-typed-builder-macro
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-typed-builder-macro/rust-typed-builder-macro.spec
+        - sh -c 'echo typed-builder-macro-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-typed-builder-macro/rust-typed-builder-macro.spec
+  rust-rustls-pki-types:
+    # https://github.com/rustls/pki-types
+    specfile_path: rust-rustls-pki-types/rust-rustls-pki-types.spec
+    files_to_sync:
+      - rust-rustls-pki-types/rust-rustls-pki-types.spec
+      - rust-rustls-pki-types/rust2rpm.toml
+    upstream_package_name: rustls-pki-types
+    downstream_package_name: rust-rustls-pki-types
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-rustls-pki-types/rust-rustls-pki-types.spec
+        - sh -c 'echo rustls-pki-types-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-rustls-pki-types/rust-rustls-pki-types.spec
+  rust-chacha20:
+    # https://github.com/RustCrypto/stream-ciphers
+    specfile_path: rust-chacha20/rust-chacha20.spec
+    files_to_sync:
+      - rust-chacha20/rust-chacha20.spec
+      - rust-chacha20/rust2rpm.toml
+    upstream_package_name: chacha20
+    downstream_package_name: rust-chacha20
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-chacha20/rust-chacha20.spec
+        - sh -c 'echo chacha20-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-chacha20/rust-chacha20.spec
+  rust-ed25519-dalek:
+    # https://github.com/dalek-cryptography/curve25519-dalek
+    specfile_path: rust-ed25519-dalek/rust-ed25519-dalek.spec
+    files_to_sync:
+      - rust-ed25519-dalek/rust-ed25519-dalek.spec
+      - rust-ed25519-dalek/rust2rpm.toml
+    upstream_package_name: ed25519-dalek
+    downstream_package_name: rust-ed25519-dalek
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-ed25519-dalek/rust-ed25519-dalek.spec
+        - sh -c 'echo ed25519-dalek-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-ed25519-dalek/rust-ed25519-dalek.spec
+  rust-actix-identity:
+    # https://github.com/actix/actix-extras
+    specfile_path: rust-actix-identity/rust-actix-identity.spec
+    files_to_sync:
+      - rust-actix-identity/rust-actix-identity.spec
+      - rust-actix-identity/rust2rpm.toml
+    upstream_package_name: actix-identity
+    downstream_package_name: rust-actix-identity
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-actix-identity/rust-actix-identity.spec
+        - sh -c 'echo actix-identity-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-actix-identity/rust-actix-identity.spec
+  rust-primes:
+    # https://github.com/wackywendell/primes
+    specfile_path: rust-primes/rust-primes.spec
+    files_to_sync:
+      - rust-primes/rust-primes.spec
+      - rust-primes/rust2rpm.toml
+    upstream_package_name: primes
+    downstream_package_name: rust-primes
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-primes/rust-primes.spec
+        - sh -c 'echo primes-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-primes/rust-primes.spec
+  rust-quanta:
+    # https://github.com/metrics-rs/quanta
+    specfile_path: rust-quanta/rust-quanta.spec
+    files_to_sync:
+      - rust-quanta/rust-quanta.spec
+      - rust-quanta/rust2rpm.toml
+    upstream_package_name: quanta
+    downstream_package_name: rust-quanta
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-quanta/rust-quanta.spec
+        - sh -c 'echo quanta-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-quanta/rust-quanta.spec
   # Upstream is working on it:
   rust-argon2:
     # https://bugzilla.redhat.com/show_bug.cgi?id=2258880
@@ -261,6 +442,149 @@ packages:
         - sh -c 'echo typed-builder-${PACKIT_PROJECT_VERSION}.crate'
       get-current-version:
         - rpmspec -q --qf "%{Version}" --srpm rust-typed-builder/rust-typed-builder.spec
+  rust-num:
+    specfile_path: rust-num/rust-num.spec
+    files_to_sync:
+      - rust-num/rust-num.spec
+      - rust-num/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-num/rust-num.spec
+        - sh -c 'echo num-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-num/rust-num.spec
+  rust-tokio-tungstenite:
+    specfile_path: rust-tokio-tungstenite/rust-tokio-tungstenite.spec
+    files_to_sync:
+      - rust-tokio-tungstenite/rust-tokio-tungstenite.spec
+      - rust-tokio-tungstenite/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-tokio-tungstenite/rust-tokio-tungstenite.spec
+        - sh -c 'echo tokio-tungstenite-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-tokio-tungstenite/rust-tokio-tungstenite.spec
+  rust-sync_wrapper:
+    specfile_path: rust-sync_wrapper/rust-sync_wrapper.spec
+    files_to_sync:
+      - rust-sync_wrapper/rust-sync_wrapper.spec
+      - rust-sync_wrapper/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-sync_wrapper/rust-sync_wrapper.spec
+        - sh -c 'echo sync_wrapper-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-sync_wrapper/rust-sync_wrapper.spec
+  rust-multer:
+    specfile_path: rust-multer/rust-multer.spec
+    files_to_sync:
+      - rust-multer/rust-multer.spec
+      - rust-multer/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-multer/rust-multer.spec
+        - sh -c 'echo multer-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-multer/rust-multer.spec
+  rust-hyper:
+    specfile_path: rust-hyper/rust-hyper.spec
+    files_to_sync:
+      - rust-hyper/rust-hyper.spec
+      - rust-hyper/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-hyper/rust-hyper.spec
+        - sh -c 'echo hyper-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-hyper/rust-hyper.spec
+  rust-axum-macros:
+    specfile_path: rust-axum-macros/rust-axum-macros.spec
+    files_to_sync:
+      - rust-axum-macros/rust-axum-macros.spec
+      - rust-axum-macros/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-axum-macros/rust-axum-macros.spec
+        - sh -c 'echo axum-macros-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-axum-macros/rust-axum-macros.spec
+  rust-axum-core:
+    specfile_path: rust-axum-core/rust-axum-core.spec
+    files_to_sync:
+      - rust-axum-core/rust-axum-core.spec
+      - rust-axum-core/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-axum-core/rust-axum-core.spec
+        - sh -c 'echo axum-core-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-axum-core/rust-axum-core.spec
+  rust-http-body:
+    specfile_path: rust-http-body/rust-http-body.spec
+    files_to_sync:
+      - rust-http-body/rust-http-body.spec
+      - rust-http-body/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-http-body/rust-http-body.spec
+        - sh -c 'echo http-body-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-http-body/rust-http-body.spec
+  rust-wl-clipboard-rs:
+    specfile_path: rust-wl-clipboard-rs/rust-wl-clipboard-rs.spec
+    files_to_sync:
+      - rust-wl-clipboard-rs/rust-wl-clipboard-rs.spec
+      - rust-wl-clipboard-rs/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-wl-clipboard-rs/rust-wl-clipboard-rs.spec
+        - sh -c 'echo wl-clipboard-rs-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-wl-clipboard-rs/rust-wl-clipboard-rs.spec
+  rust-x11-clipboard:
+    specfile_path: rust-x11-clipboard/rust-x11-clipboard.spec
+    files_to_sync:
+      - rust-x11-clipboard/rust-x11-clipboard.spec
+      - rust-x11-clipboard/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-x11-clipboard/rust-x11-clipboard.spec
+        - sh -c 'echo x11-clipboard-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-x11-clipboard/rust-x11-clipboard.spec
+  rust-base64:
+    specfile_path: rust-base64/rust-base64.spec
+    files_to_sync:
+      - rust-base64/rust-base64.spec
+      - rust-base64/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-base64/rust-base64.spec
+        - sh -c 'echo base64-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-base64/rust-base64.spec
+  rust-curve25519-dalek:
+    specfile_path: rust-curve25519-dalek/rust-curve25519-dalek.spec
+    files_to_sync:
+      - rust-curve25519-dalek/rust-curve25519-dalek.spec
+      - rust-curve25519-dalek/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-curve25519-dalek/rust-curve25519-dalek.spec
+        - sh -c 'echo curve25519-dalek-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-curve25519-dalek/rust-curve25519-dalek.spec
+  rust-hyper-tls:
+    specfile_path: rust-hyper-tls/rust-hyper-tls.spec
+    files_to_sync:
+      - rust-hyper-tls/rust-hyper-tls.spec
+      - rust-hyper-tls/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-hyper-tls/rust-hyper-tls.spec
+        - sh -c 'echo hyper-tls-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-hyper-tls/rust-hyper-tls.spec
 
 jobs:
   - job: copr_build
