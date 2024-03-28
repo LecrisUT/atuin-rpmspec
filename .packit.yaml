@@ -1,18 +1,18 @@
 packages:
   atuin:
-    specfile_path: atuin.spec
+    specfile_path: atuin/atuin.spec
     files_to_sync:
-      - atuin.spec
+      - atuin/atuin.spec
+      - atuin/rust2rpm.toml
       - .packit.yaml
-      - rust2rpm.toml
     upstream_package_name: atuin
     downstream_package_name: atuin
     actions:
       create-archive:
-        - spectool -g -s0 atuin.spec
+        - spectool -g -s0 atuin/atuin.spec
         - sh -c 'echo v${PACKIT_PROJECT_VERSION}.tar.gz'
       get-current-version:
-        - rpmspec -q --qf "%{Version}" --srpm atuin.spec
+        - rpmspec -q --qf "%{Version}" --srpm atuin/atuin.spec
 
 jobs:
   - job: copr_build
