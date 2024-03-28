@@ -225,6 +225,20 @@ packages:
         - sh -c 'echo sqlx-sqlite-${PACKIT_PROJECT_VERSION}.crate'
       get-current-version:
         - rpmspec -q --qf "%{Version}" --srpm rust-sqlx-sqlite/rust-sqlx-sqlite.spec
+  rust-sqlx-macros-core:
+    # https://github.com/launchbadge/sqlx
+    specfile_path: rust-sqlx-macros-core/rust-sqlx-macros-core.spec
+    files_to_sync:
+      - rust-sqlx-macros-core/rust-sqlx-macros-core.spec
+      - rust-sqlx-macros-core/rust2rpm.toml
+    upstream_package_name: sqlx-macros-core
+    downstream_package_name: rust-sqlx-macros-core
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-sqlx-macros-core/rust-sqlx-macros-core.spec
+        - sh -c 'echo sqlx-macros-core-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-sqlx-macros-core/rust-sqlx-macros-core.spec
   rust-tiny-bip39:
     # https://github.com/maciejhirsz/tiny-bip39/
     specfile_path: rust-tiny-bip39/rust-tiny-bip39.spec
@@ -378,6 +392,76 @@ packages:
         - sh -c 'echo quanta-${PACKIT_PROJECT_VERSION}.crate'
       get-current-version:
         - rpmspec -q --qf "%{Version}" --srpm rust-quanta/rust-quanta.spec
+  rust-futures-intrusive:
+    # https://github.com/Matthias247/futures-intrusive
+    specfile_path: rust-futures-intrusive/rust-futures-intrusive.spec
+    files_to_sync:
+      - rust-futures-intrusive/rust-futures-intrusive.spec
+      - rust-futures-intrusive/rust2rpm.toml
+    upstream_package_name: futures-intrusive
+    downstream_package_name: rust-futures-intrusive
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-futures-intrusive/rust-futures-intrusive.spec
+        - sh -c 'echo futures-intrusive-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-futures-intrusive/rust-futures-intrusive.spec
+  rust-sqlformat:
+    # https://github.com/shssoichiro/sqlformat-rs
+    specfile_path: rust-sqlformat/rust-sqlformat.spec
+    files_to_sync:
+      - rust-sqlformat/rust-sqlformat.spec
+      - rust-sqlformat/rust2rpm.toml
+    upstream_package_name: sqlformat
+    downstream_package_name: rust-sqlformat
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-sqlformat/rust-sqlformat.spec
+        - sh -c 'echo sqlformat-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-sqlformat/rust-sqlformat.spec
+  rust-stringprep:
+    # https://github.com/sfackler/rust-stringprep
+    specfile_path: rust-stringprep/rust-stringprep.spec
+    files_to_sync:
+      - rust-stringprep/rust-stringprep.spec
+      - rust-stringprep/rust2rpm.toml
+    upstream_package_name: stringprep
+    downstream_package_name: rust-stringprep
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-stringprep/rust-stringprep.spec
+        - sh -c 'echo stringprep-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-stringprep/rust-stringprep.spec
+  rust-ui_test:
+    # https://github.com/oli-obk/ui_test
+    specfile_path: rust-ui_test/rust-ui_test.spec
+    files_to_sync:
+      - rust-ui_test/rust-ui_test.spec
+      - rust-ui_test/rust2rpm.toml
+    upstream_package_name: ui_test
+    downstream_package_name: rust-ui_test
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-ui_test/rust-ui_test.spec
+        - sh -c 'echo ui_test-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-ui_test/rust-ui_test.spec
+  rust-axum-extra:
+    # https://github.com/tokio-rs/axum
+    specfile_path: rust-axum-extra/rust-axum-extra.spec
+    files_to_sync:
+      - rust-axum-extra/rust-axum-extra.spec
+      - rust-axum-extra/rust2rpm.toml
+    upstream_package_name: axum-extra
+    downstream_package_name: rust-axum-extra
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-axum-extra/rust-axum-extra.spec
+        - sh -c 'echo axum-extra-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-axum-extra/rust-axum-extra.spec
   # Upstream is working on it:
   rust-argon2:
     # https://bugzilla.redhat.com/show_bug.cgi?id=2258880
@@ -397,6 +481,15 @@ packages:
         - sh -c 'echo crypto_secretbox-${PACKIT_PROJECT_VERSION}.crate'
       get-current-version:
         - rpmspec -q --qf "%{Version}" --srpm rust-crypto_secretbox/rust-crypto_secretbox.spec
+  rust-atoi:
+    # https://bugzilla.redhat.com/show_bug.cgi?id=2268045
+    specfile_path: rust-atoi/rust-atoi.spec
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-atoi/rust-atoi.spec
+        - sh -c 'echo atoi-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-atoi/rust-atoi.spec
   # Already upstream, needs update
   rust-axum:
     specfile_path: rust-axum/rust-axum.spec
@@ -585,6 +678,39 @@ packages:
         - sh -c 'echo hyper-tls-${PACKIT_PROJECT_VERSION}.crate'
       get-current-version:
         - rpmspec -q --qf "%{Version}" --srpm rust-hyper-tls/rust-hyper-tls.spec
+  rust-libsqlite3-sys:
+    specfile_path: rust-libsqlite3-sys/rust-libsqlite3-sys.spec
+    files_to_sync:
+      - rust-libsqlite3-sys/rust-libsqlite3-sys.spec
+      - rust-libsqlite3-sys/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-libsqlite3-sys/rust-libsqlite3-sys.spec
+        - sh -c 'echo libsqlite3-sys-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-libsqlite3-sys/rust-libsqlite3-sys.spec
+  rust-tempfile:
+    specfile_path: rust-tempfile/rust-tempfile.spec
+    files_to_sync:
+      - rust-tempfile/rust-tempfile.spec
+      - rust-tempfile/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-tempfile/rust-tempfile.spec
+        - sh -c 'echo tempfile-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-tempfile/rust-tempfile.spec
+  rust-tungstenite:
+    specfile_path: rust-tungstenite/rust-tungstenite.spec
+    files_to_sync:
+      - rust-tungstenite/rust-tungstenite.spec
+      - rust-tungstenite/rust2rpm.toml
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-tungstenite/rust-tungstenite.spec
+        - sh -c 'echo tungstenite-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-tungstenite/rust-tungstenite.spec
 
 jobs:
   - job: copr_build

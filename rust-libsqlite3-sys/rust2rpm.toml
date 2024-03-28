@@ -1,0 +1,13 @@
+[requires]
+build = [
+  "pkgconfig(sqlcipher)",
+  "pkgconfig(sqlite3) >= 3.7.16",
+]
+lib = [
+  "pkgconfig(sqlite3) >= 3.7.16",
+]
+
+[requires.features]
+sqlcipher = [
+  "pkgconfig(sqlcipher)",
+]
