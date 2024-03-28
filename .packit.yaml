@@ -13,6 +13,25 @@ packages:
         - sh -c 'echo v${PACKIT_PROJECT_VERSION}.tar.gz'
       get-current-version:
         - rpmspec -q --qf "%{Version}" --srpm atuin/atuin.spec
+  # Upstream is working on it:
+  rust-argon2:
+    # https://bugzilla.redhat.com/show_bug.cgi?id=2258880
+    specfile_path: rust-argon2/rust-argon2.spec
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-argon2/rust-argon2.spec
+        - sh -c 'echo argon2-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-argon2/rust-argon2.spec
+  rust-crypto_secretbox:
+    # https://bugzilla.redhat.com/show_bug.cgi?id=2259330
+    specfile_path: rust-crypto_secretbox/rust-crypto_secretbox.spec
+    actions:
+      create-archive:
+        - spectool -g -s0 rust-crypto_secretbox/rust-crypto_secretbox.spec
+        - sh -c 'echo crypto_secretbox-${PACKIT_PROJECT_VERSION}.crate'
+      get-current-version:
+        - rpmspec -q --qf "%{Version}" --srpm rust-crypto_secretbox/rust-crypto_secretbox.spec
 
 jobs:
   - job: copr_build
