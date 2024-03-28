@@ -10,7 +10,7 @@ Summary:        magical shell history
 
 License:        MIT
 URL:            https://crates.io/crates/atuin
-Source:         %{crates_source}
+Source:         https://github.com/atuinsh/atuin/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires:  cargo-rpm-macros >= 24
 
